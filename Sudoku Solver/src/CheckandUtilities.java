@@ -260,7 +260,7 @@ public class CheckandUtilities
 		{
 			for (int y = 0; y < input[0].length; y++)
 			{
-				temp[x][y] = input[x][y];
+				temp[x][y] =new String( input[x][y]);
 			}
 		}
 		return temp;
