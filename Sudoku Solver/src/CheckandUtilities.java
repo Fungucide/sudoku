@@ -108,6 +108,16 @@ public class CheckandUtilities
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param map
+	 *            Values for each square
+	 * @param values
+	 *            List of values
+	 * @param possibleValues
+	 *            The actual boolean 3d array
+	 * @return The updated array
+	 */
 	public static Boolean[][][] updatePossibilities(String[][] map, String[] values, Boolean[][][] possibleValues)
 	{
 		String check;
@@ -154,6 +164,15 @@ public class CheckandUtilities
 		return possibleValues;
 	}
 
+	/**
+	 * 
+	 * @param possibleValues
+	 *            The 3d array of the possible values
+	 * @param values
+	 *            the order
+	 * 
+	 *            Prints out the possible values
+	 */
 	public static void printPossibleValues(Boolean[][][] possibleValues, String[] values)
 	{
 		for (int i = 0; i < possibleValues[0][0].length; i++)
@@ -177,6 +196,11 @@ public class CheckandUtilities
 		}
 	}
 
+	/**
+	 * 
+	 * @param map
+	 *            The values of each square Prints out the map
+	 */
 	public static void PrintMap(String[][] map)
 	{
 		int quadrantSize = map[0].length;
@@ -191,6 +215,12 @@ public class CheckandUtilities
 		System.out.println();
 	}
 
+	/**
+	 * 
+	 * @param map
+	 * @param values
+	 * @return If the grid is filled
+	 */
 	public static boolean isSolved(String[][] map, String[] values)
 	{
 		for (int y = 0; y < map[0].length; y++)

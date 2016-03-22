@@ -6,6 +6,13 @@ public class Method
 	public static ArrayList<String>	moves		= new ArrayList<String>();
 	public static boolean			mapChange	= false;
 
+	/**
+	 * 
+	 * @param map
+	 * @param values
+	 * @return Updated map Tries to solve by checking which boxes could hold
+	 *         which number and if there is only one that can put it in.
+	 */
 	public static String[][] methodOne(String[][] map, String[] values)
 	{
 		possibleValues = new Boolean[map[0].length][map[0].length][map[0].length];

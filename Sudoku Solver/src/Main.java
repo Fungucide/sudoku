@@ -5,7 +5,13 @@ import java.io.IOException;
 
 public class Main
 {
-
+	/**
+	 * 
+	 * @param map
+	 *            The values within a square
+	 * @param values
+	 *            A list of the order of the values
+	 */
 	public static void solve(String[][] map, String[] values)
 	{
 		String[][] temp;
@@ -13,22 +19,29 @@ public class Main
 		boolean flag = false;
 		while (!CheckandUtilities.isSolved(map, values))
 		{
-			methodNum = methodNum % 2;
 			temp = map.clone();
 			switch (methodNum)
 			{
 			case 1:
 				map = Method.methodOne(map, values);
-				System.out.println("m1");
+				// System.out.println("m1");
+				if (map.equals(temp))
+				{
+					flag = true;
+				}
 				methodNum++;
 				break;
 			case 2:
 				map = Method.methodTwo(map, values);
-				System.out.println("m2");
-				methodNum++;
+				// System.out.println("m2");
+				if (map.equals(temp))
+				{
+					methodNum++;
+				} else
+				{
+					methodNum = 1;
+				}
 				break;
-			case 3:
-				flag = true;
 			}
 			if (flag)
 			{
@@ -45,7 +58,7 @@ public class Main
 	public static void main(String[] args) throws NumberFormatException, IOException
 	{
 		// TODO Auto-generated method stub
-		BufferedReader br = new BufferedReader(new FileReader(new File("Data(" + 1 + ").sdku")));
+		BufferedReader br = new BufferedReader(new FileReader(new File("Data(" + 3 + ").sdku")));
 		int quadrantSize = Integer.parseInt(br.readLine());
 		if (Math.pow(Math.sqrt(quadrantSize), 2) != quadrantSize)
 		{
